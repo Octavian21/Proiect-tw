@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>AdWise!</title>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="top-nav">
+            <div class="left">
+                <a id="logo" href="index.html"><img src="Asset 6@4x.png" alt=""></a>
+                <div class="dropMenu">
+                    Questions and Answers?
+                    <ul>
+                        <li> <a href="categorii.html"> Categories </a> </li>
+                        <li> <a href="#"> Without answer </a> </li>
+                        <li> <a href="#"> Without badge </a> </li>
+                        <li> <a href="#"> Popular </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <button onclick="document.getElementById('crtaccount').style.display='block'" class="crtButton">Create account</button>
+                <button onclick="document.getElementById('login').style.display='block'" class="lgnButton">Log In</button>
+            </div>
+        </div>
+        <div id="login" class="modal">
+            <div class="modal-content">
+                <form class="account-form" name="loginForm">
+                    <span onclick="document.getElementById('login').style.display='none'" class="close-button">&times;</span>
+                    <div class="form-title">WELCOME BACK</div>
+                    <img class="form-img" src="user.png" alt="user"> 
+                    <input class="form-field" type="text" name="username" placeholder="Username">
+                    <input class="form-field" type="password" name="password" placeholder="Password">
+                    <button class="form-button" type="submit">Log In</button>
+                    <a href="#">Forgot Username/ Password?</a>
+                </form>
+            </div>
+        </div>
+        <div id="crtaccount" class="modal">
+            <div class="modal-content">
+                <form class="account-form" name="signupForm">
+                    <span onclick="document.getElementById('crtaccount').style.display='none'" class="close-button">&times;</span>
+                    <div class="form-title">Nice to meet you!</div>
+                    <img class="form-img" src="user.png" alt="user"> 
+                    <input class="form-field" type="text" name="username" placeholder="Username">
+                    <input class="form-field" type="password" name="password" placeholder="Password">
+                    <input class="form-field" type="password" name="password" placeholder="Confirm password">
+                    <button class="form-button" type="submit">Sign Up</button>
+                    <a href="#">Already have an account?</a>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="left-side">
+                <div class="search-bar">
+                    <input type="find" placeholder="Find answers and questions">
+                    <img src="search.svg" alt="search">
+                </div>
+                <div class="top-countries">
+                    <div class="title">Top answers by country</div>
+                    <div class="subtitle"> Latest hour</div>
+                    <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"> <b>Andrei </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                    <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"> <b>Catherine </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                    <div class="subtitle">Latest day</div>
+                    <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Andrei </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                    <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Eizabeth </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                    <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"> <b>Maya </b> </a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                    <div class="answer"> <img src="user.png" alt="user"><a class="name" href="#"> <b>Catherine </b> </a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                    <div class="subtitle">Latest week</div>
+                    <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Andrei </b></a> has answered to <a class="answ-color" href="#">a question </a>.</div>
+                    <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Eizabeth </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                    <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Maya </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                    <div class="answer"> <img src="user.png" alt="user"><a class="name" href="#"> <b>Catherine </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                </div>
+                <div class="top-categories">
+                    <div class="title">Top Categories</div>
+                    <div class="subtitle"> Latest hour</div>
+                    <a class="categories" href="#">Food</a>
+                    <a class="categories" href="#">Computer Science</a>
+                    <a class="categories" href="#">Teenagers</a>
+                    <a class="categories" href="#">Family</a>
+                    <a class="categories" href="#">Business</a>
+                    <div class="subtitle">Latest day</div>
+                    <a class="categories" href="#">Beauty&Fashion</a>
+                    <a class="categories" href="#">Computer Science</a>
+                    <a class="categories" href="#">Teenagers</a>
+                    <a class="categories" href="#">Family</a>
+                    <a class="categories" href="#">Miscellaneous</a>
+                    <div class="subtitle">Latest week</div>
+                    <a class="categories" href="#">Food</a>
+                    <a class="categories" href="#">Computer Science</a>
+                    <a class="categories" href="#">Teenagers</a>
+                    <a class="categories" href="#">Family</a>
+                    <a class="categories" href="#">Miscellaneous</a>
+                </div>
+            </div>
+            <div class="right-side">
+                <a class="ask" href="">Ask a question</a>
+                <div class="container-questions">
+                    <div class="question">
+                        <div class="picture"> <img src="user.png" alt="user"> </div>
+                        <div class="question-body">
+                            <div class="question-top">
+                                <div class="name"> <a href="#"> <b> Stefania</a> </b> is asking: </div>
+                                <div class="time"> <a href="#"></a> 3 minutes ago </div>
+                            </div>
+                            <div class="question-content"> <a href="#"></a> Salutare,
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus veritatis voluptatum eaque consequatur aspernatur suscipit maiores quod. Quo, unde, libero quibusdam atque nesciunt non incidunt molestias vitae fugiat debitis reprehenderit.
+                            </div>
+                            <div class="question-bottom">
+                                <div class="msg">
+                                    <img src="msg.svg" alt="user">
+                                    <div class="text"> 23 </div>
+                                </div>
+                                <div class="like">
+                                    <img src="like.svg" alt="user">
+                                    <div class="text"> 45 </div>
+                                </div>
+                                <div class="dislike">
+                                    <img src="dislake.svg" alt="user">
+                                    <div class="text"> 23 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="picture"> <img src="user.png" alt="user"> </div>
+                    <div class="question-body">
+                        <div class="question-top">
+                            <div class="name"> <a href="#"><b> Smiley </b></a>  is asking: </div>
+                            <div class="time"> <a href="#"></a> 3 minutes ago </div>
+                        </div>
+                        <div class="question-content"> <a href="#"></a> 
+                            Buna știe cineva cum as putea limita motocicleta in 50-80 /km la ora sunt începător și nu vreau să mă obișnuiesc cu viteza și un preț? Va mulțumesc
+                        </div>
+                        <div class="question-bottom">
+                            <div class="msg">
+                                <img src="msg.svg" alt="user">
+                                <div class="text"> 23 </div>
+                            </div>
+                            <div class="like">
+                                <img src="like.svg" alt="user">
+                                <div class="text"> 45 </div>
+                            </div>
+                            <div class="dislike">
+                                <img src="dislake.svg" alt="user">
+                                <div class="text"> 23 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="picture"> <img src="user.png" alt="user"> </div>
+                    <div class="question-body">
+                        <div class="question-top">
+                            <div class="name"> <a href="#"></a> <b> Anonim </b> is asking: </div>
+                            <div class="time"> <a href="#"></a> 3 minutes ago </div>
+                        </div>
+                        <div class="question-content"> <a href="#"></a> 
+                            Am comandat in 12 de pe eMAG ceva si nu a venit. zice ca comanda e la curier dar ala nu mai vine si eu am nevoie de produsu ala nu am timp sa il astept. oare sa mai comand o data?(au trecut 4 zile) app am primit 2 apeluri de la un nr nu stiu cine era dar era nr de fix..acum nu stiu +nu am primit mesaju ala ca intre orele.
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, atque rem hic velit, dolor aut quisquam cumque amet rerum animi excepturi in earum, facilis modi? Non omnis impedit dicta voluptate.
+                        </div>
+                        <div class="question-bottom">
+                            <div class="msg">
+                                <img src="msg.svg" alt="user">
+                                <div class="text"> 23 </div>
+                            </div>
+                            <div class="like">
+                                <img src="like.svg" alt="user">
+                                <div class="text"> 45 </div>
+                            </div>
+                            <div class="dislike">
+                                <img src="dislake.svg" alt="user">
+                                <div class="text"> 23 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottoms">
+                    <a class="b-lr" href=""> <img src="arrow_left.svg" alt=""> </a>
+                    <a class="b" href="">1 </a>
+                    <a class="b" href="">2 </a>
+                    <a class="b" href="">3 </a>
+                    <a class="b" href="">4 </a>
+                    <a class="b" href="">5 </a>
+                    <a class="b-lr" href=""> <img src="arrow_rightx.svg" alt=""> </a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container-footer">
+                <div class="item">
+                    <div class="title">Our team</div>
+                    <ul>
+                            <div class="email">Alexa Diana Andreea</div>
+                            <div class="email">Alexa Diana Andreea</div>
+                            <div class="email">Alexa Diana Andreea</div>
+                            <div class="email">Alexa Diana Andreea</div>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class="title">About us</div>
+                    <div class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde iusto, illum quod praesentium aliquam ratione minima doloremque, at quasi provident eligendi minus obcaecati cum ipsa corporis nostrum tempora qui!</div>
+                </div>
+                <div class="item">
+                    <div class="title">Contact</div>
+                    <a href=""><img src="github.png" alt="github"></a>
+                </div>
+            </div>
+        </footer>
+        <script>
+            var modal1 = document.getElementById('login');
+            var modal2 = document.getElementById('crtaccount');
+            
+            window.onclick = function(event) {
+                if(event.target == modal1) {
+                    modal1.style.display = 'none';
+                }
+            
+                if(event.target == modal2) {
+                    modal2.style.display = 'none';
+                }
+            }
+        </script>
+    </body>
+</html>

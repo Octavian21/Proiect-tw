@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Add question</title>
+        <link rel="stylesheet" href="add_question.css">
+        <!-- <link rel="icon" href="favicon.ico"> -->
+    </head>
+
+    <body>
+        <div id="wrapper">
+        <div class="top-nav">
+                <div class="left">
+                    <div>
+                        <a id="logo" href="index.html"><img src="img/Asset 6@4x.png" alt=""></a>
+                        <a id="small-logo" href="index.html"><img src="img/Short logo.png" alt=""></a>
+                    </div>
+                    <div class="dropMenu">
+                        Questions and Answers?
+                        <ul>
+                            <li> <a href="#"> Categories </a> </li>
+                            <li> <a href="#"> Without answer </a> </li>
+                            <li> <a href="#"> Without badge </a> </li>
+                            <li> <a href="#"> Popular </a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                        <div id="user-menu" class="user">
+                                <img src="img/user.png" alt="user">
+                                <button class="username">Anon</button>
+                                </div>
+                            </div>
+                    </div>
+            
+                <div class="container">
+                    <div class="left-side">
+                        <div class="search-bar">
+                            <input type="find" placeholder="Find answers and questions">
+                            <img src="img/search.svg" alt="search">
+                        </div>
+                        <div class="top-countries">
+                            <div class="title">Top answers by country</div>
+                            <div class="subtitle"> Latest hour</div>
+                            <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"> <b>Andrei </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                            <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"> <b>Catherine </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                            <div class="subtitle">Latest day</div>
+                            <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Andrei </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                            <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Eizabeth </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                            <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"> <b>Maya </b> </a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                            <div class="answer"> <img src="user.png" alt="user"><a class="name" href="#"> <b>Catherine </b> </a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                            <div class="subtitle">Latest week</div>
+                            <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Andrei </b></a> has answered to <a class="answ-color" href="#">a question </a>.</div>
+                            <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Eizabeth </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                            <div class="answer"> <img src="user.png" alt="user"> <a class="name" href="#"><b>Maya </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                            <div class="answer"> <img src="user.png" alt="user"><a class="name" href="#"> <b>Catherine </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
+                        </div>
+                        <div class="top-categories">
+                            <div class="title">Top Categories</div>
+                            <div class="subtitle"> Latest hour</div>
+                            <a class="categories" href="#">Food</a>
+                            <a class="categories" href="#">Computer Science</a>
+                            <a class="categories" href="#">Teenagers</a>
+                            <a class="categories" href="#">Family</a>
+                            <a class="categories" href="#">Business</a>
+                            <div class="subtitle">Latest day</div>
+                            <a class="categories" href="#">Beauty&Fashion</a>
+                            <a class="categories" href="#">Computer Science</a>
+                            <a class="categories" href="#">Teenagers</a>
+                            <a class="categories" href="#">Family</a>
+                            <a class="categories" href="#">Miscellaneous</a>
+                            <div class="subtitle">Latest week</div>
+                            <a class="categories" href="#">Food</a>
+                            <a class="categories" href="#">Computer Science</a>
+                            <a class="categories" href="#">Teenagers</a>
+                            <a class="categories" href="#">Family</a>
+                            <a class="categories" href="#">Miscellaneous</a>
+                        </div>
+                    </div>
+            <!-- <div class="right-side">
+                <div class="container-question">
+                    <div class="question"></div>
+                    
+                    <textarea>Camp de text!</textarea> 
+                </div>
+            </div> -->
+            
+            <div class="right-side">
+                        <div class="question">
+                            <select required>
+                                <option value="">Select Categorie</option>
+                                <option value="food">Food</option>
+                                <option value="computer_science">Computer Science</option>
+                                <option value="teenager">Teenagers</option>
+                                <option value="family">Family</option>
+                                <option value="business">Business</option>
+                                <option value="miscellaneous">Miscellaneous</option>
+                                <option value="beauty&fashion">Beauty&Fashion</option>
+                            </select>
+                            
+                            <div>
+                                <textarea maxlength="1000" minlength="1" spellcheck="true" placeholder="Enter your question here!"></textarea>
+                            </div>
+                            <div class="submitButton-box">
+                                <button onclick="myFunction()" class="submitButton">Submit Question!</button>
+                            </div>
+                               
+                        </div>
+                    </div>
+            </div>
+            <footer>
+                    <div class="container-footer">
+                        <div class="item">
+                            <div class="title">Our team</div>
+                            <ul>
+                                    <div class="email">Alexa Diana Andreea</div>
+                                    <div class="email">Alexa Diana Andreea</div>
+                                    <div class="email">Alexa Diana Andreea</div>
+                                    <div class="email">Alexa Diana Andreea</div>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <div class="title">About us</div>
+                            <div class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde iusto, illum quod praesentium aliquam ratione minima doloremque, at quasi provident eligendi minus obcaecati cum ipsa corporis nostrum tempora qui!</div>
+                        </div>
+                        <div class="item">
+                            <div class="title">Contact</div>
+                            <a href=""><img src="img/github.png" alt="github"></a>
+                        </div>
+                    </div>
+                </footer>
+                <script>
+                        var modal1 = document.getElementById('login');
+                        var modal2 = document.getElementById('crtaccount');
+                        
+                        window.onclick = function(event) {
+                            if(event.target == modal1) {
+                                modal1.style.display = 'none';
+                            }
+                        
+                            if(event.target == modal2) {
+                                modal2.style.display = 'none';
+                            }
+                        }
+                    </script>
+                    </div>
+    </body>
+</html>

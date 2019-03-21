@@ -557,6 +557,10 @@
     color: white;
 
   }
+
+  .item .email{
+    text-align: left;
+  }
   .item .description {
     width: 350px;
     font-size: 18px;

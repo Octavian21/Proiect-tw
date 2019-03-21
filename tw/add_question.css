@@ -143,6 +143,10 @@ body {
   font-weight: 700;
   color:#4b9b5b;
 }
+.username:hover{
+  color:#5b8a5e;
+  cursor: pointer;
+}
 .top-nav .right button {
   display: block;
   text-decoration: none;
@@ -334,6 +338,17 @@ body {
     margin-top: 24px;
 
 }
+.question-image{
+  height: 40px;
+}
+.question-image img{
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    float: left;
+    margin-left: 5%;
+    border-radius: 10%;
+}
 select{
     display: block;
     margin: 2% 5%;
@@ -342,7 +357,6 @@ select{
     border-radius: 10px;
     width: 40%;
     height: 50px;
-    align-self: bottom;
 }
 textarea{
     background-color: white;
@@ -359,6 +373,16 @@ textarea{
 }
 .submitButton-box{
     display: block;
+    flex-direction: column;
+}
+.submitButton-box #charactersRemaining{
+    display: flex;
+    margin-left: 5%;
+    flex-direction: row;
+    WIDTH: 20%;
+}
+#charactersRemaining + p{
+  margin-left: 5%;
 }
 .submitButton {
     background-color: #5BB06C;
@@ -506,8 +530,19 @@ a {
     .top-nav .left .dropMenu:hover{
         margin-left: 0px;
     }
+    select{
+      width: 70%;
+    }
 }
 
 @media (max-width: 400px){
-    footer
+    .item .description{
+      font-size: 15px;
+    }
+    .container-footer .description{
+      width: 250px;
+    }
+    .top-countries .answer{
+      font-size: 15px;
+    }
 }

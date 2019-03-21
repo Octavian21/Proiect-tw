@@ -2,14 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>AdWise!</title>
         <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
         <link href="styles.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
+    <body id="body">
         <div class="top-nav">
             <div class="left">
-                <a id="logo" href="home.html"><img src="images/logo.png" alt=""></a>
+                <a id="logo" href="index.html"><img src="images/logo.png" alt=""></a>
+                <div class="mobile-menu">
+                    <button onclick="document.getElementById('mobile-dropMenu').style.display='flex'">&#9776;</button>
+                </div>
+
                 <div class="dropMenu">
                     Questions and Answers?
                     <ul>
@@ -20,22 +25,42 @@
                     </ul>
                 </div>
             </div>
-            <div class="right">
+            <div id="menu1" class="right">
                 <button onclick="document.getElementById('crtaccount').style.display='block'" class="crtButton">Create account</button>
-                <button onclick="document.getElementById('login').style.display='block'" class="lgnButton">Log In</button>
+                <button onclick="document.getElementById('login').style.display='block';
+                             document.getElementById('menu1').style.display='none'" class="lgnButton">Log In</button>
+            </div>
+            <div id="menu2" class="right">
+                <img src="images/user.png" alt="user">
+                <button class="username">Diana</button>
             </div>
         </div>
+
+        <div id="mobile-dropMenu">
+                <button id="qa">Questions and Answers?</button>
+                    <ul id="qa-submeniu">
+                        <li> <a href="categories.html"> Categories </a> </li>
+                        <li> <a href="withoutanswer.html"> Without answer </a> </li>
+                        <li> <a href="withoutbadge.html"> Without badge </a> </li>
+                        <li> <a href="popular.html"> Popular </a> </li>
+                    </ul>
+                <button onclick="document.getElementById('crtaccount').style.display='block'">Create account</button>
+                <button onclick="document.getElementById('login').style.display='block';
+                             document.getElementById('menu1').style.display='none'">Log In</button>      
+        </div>
+        
         <div id="login" class="modal">
             <div class="modal-content">
-                <form class="account-form" name="loginForm">
+                <div class="account-form" name="loginForm">
                     <span onclick="document.getElementById('login').style.display='none'" class="close-button">&times;</span>
                     <div class="form-title">WELCOME BACK</div>
                     <img class="form-img" src="images/user.png" alt="user"> 
                     <input class="form-field" type="text" name="username" placeholder="Username">
                     <input class="form-field" type="password" name="password" placeholder="Password">
-                    <button class="form-button" type="submit">Log In</button>
+                    <button onclick="document.getElementById('menu2').style.display='flex';
+                                 document.getElementById('login').style.display='none'" class="form-button" type="submit">Log In</button>
                     <a href="#">Forgot Username/ Password?</a>
-                </form>
+                </div>
             </div>
         </div>
         <div id="crtaccount" class="modal">
@@ -55,7 +80,7 @@
         <div class="container">
             <div class="left-side">
                 <div class="search-bar">
-                    <input type="find" placeholder="Find answers and questions">
+                    <input type="text" placeholder="Find answers and questions">
                     <img src="images/search.svg" alt="search">
                 </div>
                 <div class="top-countries">
@@ -74,7 +99,7 @@
                     <div class="answer"> <img src="images/user.png" alt="user"> <a class="name" href="#"><b>Maya </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
                     <div class="answer"> <img src="images/user.png" alt="user"><a class="name" href="#"> <b>Catherine </b></a> has answered to <a class="answ-color" href="#">a question</a>.</div>
                 </div>
-                <div class="top-categories">
+                <div class="top-categories top-countries">
                     <div class="title">Top Categories</div>
                     <div class="subtitle"> Latest hour</div>
                     <a class="categories" href="namecategory.html">Food</a>
@@ -96,18 +121,21 @@
                     <a class="categories" href="namecategory.html">Miscellaneous</a>
                 </div>
             </div>
+            
             <div class="right-side">
                 <a class="ask" href="">Ask a question</a>
                 <div class="popular-content">
-                    <div class="popular"> Popular questions</div>
-                    <div class="box-popular"> 10 questions </div>
+                    <div class="popular-body">
+                        <div class="popular"> Popular questions</div>
+                        <div class="box-popular"> 10 questions </div>
+                    </div>
                 </div>
                 <div class="container-questions">
                     <div class="question">
                         <div class="picture"> <img src="images/user.png" alt="user"> </div>
                         <div class="question-body">
                             <div class="question-top">
-                                <div class="name"> <a href="#"> <b> Stefania</a> </b> is asking: </div>
+                                <div class="name"> <a href="#"> <b> Stefania </b></a>  is asking: </div>
                                 <div class="time"> <a href="#"></a> 3 minutes ago </div>
                             </div>
                             <div class="question-content"> <a href="#"></a> Salutare,
@@ -129,56 +157,56 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="question">
-                    <div class="picture"> <img src="images/user.png" alt="user"> </div>
-                    <div class="question-body">
-                        <div class="question-top">
-                            <div class="name"> <a href="#"><b> Smiley </b></a>  is asking: </div>
-                            <div class="time"> <a href="#"></a> 3 minutes ago </div>
-                        </div>
-                        <div class="question-content"> <a href="#"></a> 
-                            Buna știe cineva cum as putea limita motocicleta in 50-80 /km la ora sunt începător și nu vreau să mă obișnuiesc cu viteza și un preț? Va mulțumesc
-                        </div>
-                        <div class="question-bottom">
-                            <div class="msg">
-                                <img src="images/msg.svg" alt="user">
-                                <div class="text"> 23 </div>
+                    <div class="question">
+                        <div class="picture"> <img src="images/user.png" alt="user"> </div>
+                        <div class="question-body">
+                            <div class="question-top">
+                                <div class="name"> <a href="#"><b> Smiley </b></a>  is asking: </div>
+                                <div class="time"> <a href="#"></a> 3 minutes ago </div>
                             </div>
-                            <div class="like">
-                                <img src="images/like.svg" alt="user">
-                                <div class="text"> 45 </div>
+                            <div class="question-content"> <a href="#"></a> 
+                                Buna știe cineva cum as putea limita motocicleta in 50-80 /km la ora sunt începător și nu vreau să mă obișnuiesc cu viteza și un preț? Va mulțumesc
                             </div>
-                            <div class="dislike">
-                                <img src="images/dislake.svg" alt="user">
-                                <div class="text"> 23 </div>
+                            <div class="question-bottom">
+                                <div class="msg">
+                                    <img src="images/msg.svg" alt="user">
+                                    <div class="text"> 23 </div>
+                                </div>
+                                <div class="like">
+                                    <img src="images/like.svg" alt="user">
+                                    <div class="text"> 45 </div>
+                                </div>
+                                <div class="dislike">
+                                    <img src="images/dislake.svg" alt="user">
+                                    <div class="text"> 23 </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="question">
-                    <div class="picture"> <img src="images/user.png" alt="user"> </div>
-                    <div class="question-body">
-                        <div class="question-top">
-                            <div class="name"> <a href="#"></a> <b> Anonim </b> is asking: </div>
-                            <div class="time"> <a href="#"></a> 3 minutes ago </div>
-                        </div>
-                        <div class="question-content"> <a href="#"></a> 
-                            Am comandat in 12 de pe eMAG ceva si nu a venit. zice ca comanda e la curier dar ala nu mai vine si eu am nevoie de produsu ala nu am timp sa il astept. oare sa mai comand o data?(au trecut 4 zile) app am primit 2 apeluri de la un nr nu stiu cine era dar era nr de fix..acum nu stiu +nu am primit mesaju ala ca intre orele.
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, atque rem hic velit, dolor aut quisquam cumque amet rerum animi excepturi in earum, facilis modi? Non omnis impedit dicta voluptate.
-                        </div>
-                        <div class="question-bottom">
-                            <div class="msg">
-                                <img src="images/msg.svg" alt="user">
-                                <div class="text"> 23 </div>
+                    <div class="question">
+                        <div class="picture"> <img src="images/user.png" alt="user"> </div>
+                        <div class="question-body">
+                            <div class="question-top">
+                                <div class="name"> <a href="#"></a> <b> Anonim </b> is asking: </div>
+                                <div class="time"> <a href="#"></a> 3 minutes ago </div>
                             </div>
-                            <div class="like">
-                                <img src="images/like.svg" alt="user">
-                                <div class="text"> 45 </div>
+                            <div class="question-content"> <a href="#"></a> 
+                                Am comandat in 12 de pe eMAG ceva si nu a venit. zice ca comanda e la curier dar ala nu mai vine si eu am nevoie de produsu ala nu am timp sa il astept. oare sa mai comand o data?(au trecut 4 zile) app am primit 2 apeluri de la un nr nu stiu cine era dar era nr de fix..acum nu stiu +nu am primit mesaju ala ca intre orele.
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, atque rem hic velit, dolor aut quisquam cumque amet rerum animi excepturi in earum, facilis modi? Non omnis impedit dicta voluptate.
                             </div>
-                            <div class="dislike">
-                                <img src="images/dislake.svg" alt="user">
-                                <div class="text"> 23 </div>
+                            <div class="question-bottom">
+                                <div class="msg">
+                                    <img src="images/msg.svg" alt="user">
+                                    <div class="text"> 23 </div>
+                                </div>
+                                <div class="like">
+                                    <img src="images/like.svg" alt="user">
+                                    <div class="text"> 45 </div>
+                                </div>
+                                <div class="dislike">
+                                    <img src="images/dislake.svg" alt="user">
+                                    <div class="text"> 23 </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -195,29 +223,31 @@
             </div>
         </div>
         <footer>
-                <div class="container-footer">
-                    <div class="item">
-                        <div class="title">Our team</div>
-                        <ul>
-                                <div class="email">Alexa Diana Andreea</div>
-                                <div class="email">Alexa Diana Andreea</div>
-                                <div class="email">Alexa Diana Andreea</div>
-                                <div class="email">Alexa Diana Andreea</div>
-                        </ul>
-                    </div>
-                    <div class="item">
-                        <div class="title">About us</div>
-                        <div class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde iusto, illum quod praesentium aliquam ratione minima doloremque, at quasi provident eligendi minus obcaecati cum ipsa corporis nostrum tempora qui!</div>
-                    </div>
-                    <div class="item">
-                        <div class="title">Contact</div>
-                        <a href=""><img src="images/github.png" alt="github"></a>
-                    </div>
+            <div class="container-footer">
+                <div class="item">
+                    <div class="title">Our team</div>
+                    <ul>
+                        <li class="email">Alexa Diana Andreea</li>
+                        <li class="email">Alexa Diana Andreea</li>
+                        <li class="email">Alexa Diana Andreea</li>
+                        <li class="email">Alexa Diana Andreea</li>
+                    </ul>
                 </div>
-            </footer>
+                <div class="item">
+                    <div class="title">About us</div>
+                    <div class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae unde iusto, illum quod praesentium aliquam ratione minima doloremque, at quasi provident eligendi minus obcaecati cum ipsa corporis nostrum tempora qui!</div>
+                </div>
+                <div class="item">
+                    <div class="title">Contact</div>
+                    <a href=""><img src="images/github.png" alt="github"></a>
+                </div>
+            </div>
+        </footer>
+
         <script>
             var modal1 = document.getElementById('login');
             var modal2 = document.getElementById('crtaccount');
+            var qa = document.getElementById('qa');
             
             window.onclick = function(event) {
                 if(event.target == modal1) {
@@ -226,6 +256,15 @@
             
                 if(event.target == modal2) {
                     modal2.style.display = 'none';
+                }
+
+                if(event.target == qa)
+                {
+                    var submeniu = document.getElementById('qa-submeniu');
+                    if(submeniu.style.display == 'none')
+                        submeniu.style.display = 'block';
+                    else
+                        submeniu.style.display = 'none';
                 }
             }
         </script>

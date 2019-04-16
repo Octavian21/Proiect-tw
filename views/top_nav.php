@@ -9,9 +9,9 @@
             Questions and Answers?
             <ul>
                 <li> <a href="categories.php"> Categories </a> </li>
-                <li> <a href="withoutanswer.php"> Without answer </a> </li>
-                <li> <a href="withoutbadge.php"> Without badge </a> </li>
-                <li> <a href="popular.php"> Popular </a> </li>
+                <li> <a href="filters.php"> Without answer </a> </li>
+                <li> <a href="filters.php"> Without badge </a> </li>
+                <li> <a href="filters.php"> Popular </a> </li>
             </ul>
         </div>
     </div>
@@ -73,3 +73,27 @@
         </form>
     </div>
 </div>
+
+<script>
+var modal1 = document.getElementById('login');
+var modal2 = document.getElementById('crtaccount');
+var qa = document.getElementById('qa');
+
+window.onclick = function(event) {
+    if (event.target == modal1) {
+        modal1.style.display = 'none';
+    }
+
+    if (event.target == modal2) {
+        modal2.style.display = 'none';
+    }
+
+    if (event.target == qa) {
+        var submeniu = document.getElementById('qa-submeniu');
+        if (submeniu.style.display == 'none')
+            submeniu.style.display = 'block';
+        else
+            submeniu.style.display = 'none';
+    }
+}
+</script>

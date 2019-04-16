@@ -5,7 +5,7 @@
             <div class="name"> <a href="pagina_user.php"><b> Smiley </b></a> has answered: </div>
             <div class="time"> <a href="#"></a> 3 minutes ago </div>
         </div>
-        <div class="question-content-normal">
+        <div class="question-content">
             <p> Buna știe cineva cum as putea limita motocicleta in 50-80 /km la ora sunt începător și
                 nu vreau să mă obișnuiesc cu viteza și un preț? Va mulțumesc </p>
         </div>

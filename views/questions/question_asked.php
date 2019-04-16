@@ -5,17 +5,12 @@
             <div class="name"> <a href="pagina_user.php"> <b> Stefania </b> </a>has asked: </div>
             <div class="time"> <a href="#"></a> 3 minutes ago </div>
         </div>
-        <div class="question-content-normal">
-            <p>Salutare,
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus veritatis voluptatum
+        <div class="question-content ">
+            <p>Salutare, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus veritatis voluptatum
                 eaque consequatur aspernatur suscipit maiores quod. Quo, unde, libero quibusdam atque
                 nesciunt non incidunt molestias vitae fugiat debitis reprehenderit. </p>
         </div>
-        <form class="question-down">
-            <textarea name="message" rows="12" cols="60" placeholder="Type your answer here"></textarea>
-            <input type="submit" value="Answer">
-
-        </form>
+        <?php include 'views/questions/answer_form.php'; ?>
         <div class="question-bottom">
             <div class="msg">
                 <img src="images/msg.svg" alt="user">

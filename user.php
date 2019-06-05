@@ -1,11 +1,13 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'views/head.php' ?>
+<?php include 'app/views/head.php' ?>
 
 <body>
-    <?php include 'views/top_nav.php' ?>
-    <?php include 'views/panels/user_panel.php' ?>
-    <?php include 'views/footer.php' ?>
+    <?php include 'app/views/top_nav.php' ?>
+    <?php include 'app/views/panels/user_panel.php' ?>
+    <?php include 'app/views/footer.php' ?>
 </body>
 
 </html>

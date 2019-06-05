@@ -140,12 +140,18 @@ a {
   color: white;
 }
 
+.lgnButton a {
+  color: white;
+  text-decoration: none;
+}
+
 .lgnButton:hover {
   background-color: #4b9b5b;
 }
 
-#menu2 {
-  display: none;
+#menu2 .lgnButton {
+  text-decoration: none;
+  background-color: #993366;
 }
 
 .username {
@@ -179,28 +185,32 @@ a {
 .left-panel {
   flex: 1 28%;
   display: flex;
+  margin-right: 12px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .right-panel {
-  width: 100%;
   flex: 2 72%;
-  margin-left: 24px;
+  margin-left: 12px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .search-bar {
   display: flex;
   justify-content: center;
+  width: 100%;
   align-items: center;
   position: relative;
   padding: 16px 8px;
+  
   border-radius: 10px;
   background: white;
+
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
   -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
@@ -227,12 +237,15 @@ a {
 .top-categories {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 24px;
-  padding: 16px;
+  width: 100%;
+  padding: 16px 8px;
+  
   background-color: white;
   border-radius: 10px;
   border-bottom: 3px solid #9b9b9b;
+
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
   -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
@@ -249,36 +262,10 @@ a {
   border-bottom: 1px solid #cccccc;
 }
 
-.category-submenu {
-  display: none;
-}
-
-.category-submenu ul {
-  list-style: none;
-}
-
-.category-submenu ul li:hover {
-  background-color: #993366;
-  color: white;
-}
-
-.category-submenu ul li a {
-  text-decoration: none;
-  color: #5BB06C;
-}
-
-.category-submenu ul li:hover a {
-  color: white;
-}
-
-.top-categories .header:hover .category-submenu {
-  display: block;
-  font-size: 20px;
-}
-
 .category_group {
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: flex-start;
 }
 
@@ -360,14 +347,12 @@ a {
 }
 
 .question {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 16px;
+  width: 100%;
   margin-top: 24px;
+  background-color: white;
+
   border-radius: 10px;
   border-bottom: 3px solid #4b9b5b;
-  background-color: white;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
   -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
@@ -377,22 +362,30 @@ a {
   font-size: 30px;
 }
 
-.question .picture img {
-  flex: 1 10%;
-  width: 50px;
-  height: 50px;
-}
-
 .question-body {
-  margin-left: 16px;
-  flex: 2 90%;
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
+  padding: 16px 16px;
 }
 
 .question-top {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+}
+
+.question-top img {
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+}
+
+.question-top .name {
+  margin-left: 8px;
 }
 
 .question-top .name b {
@@ -402,23 +395,28 @@ a {
 
 .question-top .time {
   font-size: 14px;
-  align-self: center;
+  position: absolute;
+  right: 0px;
 }
 
+
 .question-content {
-  margin-top: 15px;
-  font-size: 18px;
+  width: 100%;
+  margin-top: 16px;
+  font-size: 16px;
+  text-align: justify;
   color: #666666;
 }
 
 .answer-form {
+  width: 100%;
   margin-top: 15px;
   background-color: #5BB06C;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 24px 12px;
+  padding-bottom: 16px;
   border-radius: 10px;
 }
 
@@ -432,6 +430,7 @@ a {
 
 .answer-form input[type="submit"] {
   color: white;
+  margin-left: 32px;
   padding: 12px 24px;
   background-color: #993366;
   border-radius: 10px;
@@ -447,6 +446,7 @@ a {
 }
 
 .question-bottom {
+  width: 100%;
   display: flex;
   margin-top: 15px;
   padding-top: 15px;
@@ -468,7 +468,7 @@ a {
 }
 
 .asked p {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .funda {
@@ -476,7 +476,7 @@ a {
   border-bottom: none;
 }
 
-.funda .name, .funda p,.funda .text, .funda .time {
+.funda .name, .funda p, .funda .text, .funda .time {
   color: white;
 }
 
@@ -490,11 +490,6 @@ a {
 }
 
 .like {
-  display: flex;
-  margin-left: 30px;
-}
-
-.warning {
   display: flex;
   margin-left: 30px;
 }

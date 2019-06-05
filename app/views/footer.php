@@ -3,10 +3,8 @@
         <div class="item">
             <div class="title">Our team</div>
             <ul>
-                    <li class="email">Alexa Diana Andreea</li>
-                    <li class="email">Cotfasă-Humă Octavian Gabriel</li>
-                    <li class="email">Ciocîrtău Dragoș</li>
-                    <li class="email">Spuze Florin</li>
+                <li class="email">Alexa Diana Andreea</li>
+                <li class="email">Cotfasă-Humă Octavian Gabriel</li>
             </ul>
         </div>
         <div class="item">

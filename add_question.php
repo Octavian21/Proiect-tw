@@ -1,14 +1,15 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'views/head.php' ?>
+<?php include 'app/views/head.php' ?>
 
 <body>
-    <?php include 'views/top_nav.php' ?>
+    <?php include 'app/views/top_nav.php' ?>
     <div class="container">
-        <?php include 'views/panels/left_panel.php' ?>
-        <?php include 'views/panels/add_panel.php' ?>
+        <?php include 'app/views/panels/left_panel.php' ?>
+        <?php include 'app/views/panels/add_panel.php' ?>
     </div>
-    <?php include 'views/footer.php' ?>
+    <?php include 'app/views/footer.php' ?>
 </body>
 
 </html>

@@ -7,8 +7,8 @@
         </div>
     </div>
     <div class="container-questions">
-        <?php include 'views/questions/question.php' ?>
-        <?php include 'views/questions/question.php' ?>
+        <?php include 'app/views/questions/question.php' ?>
+        <?php include 'app/views/questions/question.php' ?>
     </div>
-    <?php include 'views/button.php' ?>
+    <?php include 'app/views/button.php' ?>
 </div>

@@ -1,6 +1,6 @@
 <div class="top-nav">
     <div class="left">
-        <a id="logo" href="index.php"><img src="images/logo.png" alt=""></a>
+        <a onclick="onClose()" id="logo" href="index.php"><img src="images/logo.png" alt=""></a>
         <div class="mobile-menu">
             <button onclick="document.getElementById('mobile-dropMenu').style.display='flex'">&#9776;</button>
         </div>
@@ -79,5 +79,14 @@
             else
                 submeniu.style.display = 'none';
         }
+    }
+
+    function onClose() {
+        document.getElementById('add-question-error').remove();
+        $.ajax({
+            type: "GET",
+            url: "app/unset_error.php",
+            data: null
+        });
     }
 </script>

@@ -4,14 +4,6 @@ $forgotController = new ForgotController();
 $forgotController->setPassword();
 ?>
 
-<script>
-    $(document).ready(function() {
-        $('#forgot-form').on('submit', function(e) {
-
-        });
-    });
-</script>
-
 <div id="forgot" class="modal">
     <div class="modal-content">
         <form onsubmit="onSubmitReset(event)" class="account-form" id="forgot-form">

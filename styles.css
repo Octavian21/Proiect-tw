@@ -344,6 +344,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .question {
@@ -422,7 +423,7 @@ a {
 
 .answer-form textarea {
   padding: 12px 12px;
-  margin-bottom: 12px;
+  margin: 24px auto;
   border-radius: 10px;
   font-size: 20px;
   background-color: white;
@@ -901,8 +902,7 @@ footer {
 }
 
 .add-question {
-  width: inherit;
-  padding: 16px;
+  width: 100%;
   background-color: #993366;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
@@ -910,40 +910,27 @@ footer {
   border-radius: 10px;
 }
 
-.question-image {
-  height: 40px;
-}
-
-.question-image img {
-  width: 40px;
-  height: 40px;
-  margin-right: 8px;
-  float: left;
-  margin-left: 5%;
-  border-radius: 10%;
-}
-
-.question-image b {
-  color: white;
+.add-question-body {
+  padding: 24px;
 }
 
 select {
   display: block;
-  margin: 2% 5%;
-  padding: 1%;
+  margin-top: 24px;
+  padding: 5px;
   background-color: white;
   border-radius: 10px;
-  width: 40%;
+  width: 300px;
   height: 50px;
 }
 
-textarea {
+.add-question-text {
   background-color: white;
   resize: none;
-  width: 80%;
+  width: 98%;
+  padding: 1%;
   height: 200px;
-  padding: 2%;
-  margin: 5%;
+  margin-top: 24px;
   line-height: 1.5;
   border-radius: 10px;
   border: 1px solid #ccc;
@@ -952,35 +939,22 @@ textarea {
   font-size: 20px;
 }
 
-.submitButton-box {
-  display: block;
-  flex-direction: column;
-  color: white;
-}
-
-.submitButton-box #charactersRemaining {
+.add-question-bottom {
   display: flex;
-  margin-left: 5%;
-  flex-direction: row;
-  WIDTH: 20%;
-}
-
-#charactersRemaining+p {
-  margin-left: 5%;
+  width: 100%;
+  margin-top: 24px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
 .submitButton {
   background-color: #5BB06C;
   color: white;
-  width: 20%;
   border-radius: 10px;
   align-self: flex-start;
-  padding: 1.5%;
-  margin-top: 0%;
-  margin-bottom: 0%;
-  margin-right: 5%;
-  margin-left: 70%;
-  text-size-adjust: 80%;
+  padding: 8px;
+
 }
 
 .submitButton:hover {

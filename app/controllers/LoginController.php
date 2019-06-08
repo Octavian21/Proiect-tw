@@ -13,8 +13,13 @@ class LoginController
 
     public function login()
     {
-        if (!isset($_SESSION['login']))
+        if (!isset($_SESSION['login'])) {
             $_SESSION['login'] = 0;
+        }
+
+        if (!isset($_SESSION['anonim-nume'])) {
+            $_SESSION['anonim-nume'] = $this->model->generateAnonim();
+        }
 
         if (isset($_POST['login'])) {
             $result = $this->model->getLogin();

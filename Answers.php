@@ -7,7 +7,7 @@
     <?php include 'app/views/top_nav.php' ?>
     <div class="container">
         <?php include 'app/views/panels/left_panel.php' ?>
-        <?php include 'app/views/panels/answers_panel.php' ?>
+        <?php include 'app/views/panels/AnswersPanelView.php' ?>
     </div>
     <?php include 'app/views/footer.php' ?>
 </body>

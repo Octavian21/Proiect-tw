@@ -22,18 +22,19 @@ class AnswerFormModel
 
     public function getIdUser()
     {
-        $result = mysqli_query($this->connection, "select id from utilizatori where user = '" . $_SESSION['login-nume'] . "'");
+        if ($_SESSION['login'] == 0)
+            $result = mysqli_query($this->connection, "select id from anonimi where user = '" . $_SESSION['anonim-nume'] . "'");
+        else
+            $result = mysqli_query($this->connection, "select id from utilizatori where user = '" . $_SESSION['login-nume'] . "'");
 
         $id = mysqli_fetch_assoc($result);
 
         return $id['id'];
     }
 
-    //public function getIdIntrebare
-
     public function insertAnswer()
     {
-        $sql = "INSERT into raspunsuri (id_intrebare,id_utilizator,nr_likeuri,nr_dislikeuri,data_adaugare,continut,funda) values ('" . 1 . "','" . $this->getIdUser() . "','" . 0 . "','" . 0 . "','" . date("d.m.y h:i:s") . "','" . $_POST['message'] . "','" . 0 . "')";
+        $sql = "INSERT into raspunsuri (id_intrebare,id_utilizator,tip_utilizator,nr_likeuri,nr_dislikeuri,data_adaugare,continut,funda) values (" . $_SESSION['question'] . ",'" . $this->getIdUser() . "','" . $_SESSION['login'] . "','" . 0 . "','" . 0 . "',NOW(),'" . $_POST['message'] . "','" . 0 . "')";
 
         if ($this->connection->query($sql) === TRUE)
             return "Raspunsul a fost adaugat cu succes!";

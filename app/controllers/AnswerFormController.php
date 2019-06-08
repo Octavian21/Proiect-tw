@@ -17,11 +17,8 @@ class AnswerFormController
             $result = $this->model->getSize();
             if ($result != 1)
                 $_SESSION['answerform-error'] = $result;
-            else 
-            if ($_SESSION['login'] == 1) {
+            else
                 $_SESSION['answerform-error'] = $this->model->insertAnswer();
-                unset($_SESSION['answerform-error']);
-            }
         }
     }
 }

@@ -34,4 +34,19 @@ class LoginModel
     {
         return $_POST['username'];
     }
+
+    public function generateAnonim()
+    {
+        $result = mysqli_query($this->connection, "select count(*) as total from anonimi");
+
+        $total = mysqli_fetch_assoc($result);
+
+        $user = 'Anonim' . $total['total'];
+
+        $sql = "INSERT into anonimi (user) values ('$user')";
+
+        $this->connection->query($sql);
+
+        return $user;
+    }
 }

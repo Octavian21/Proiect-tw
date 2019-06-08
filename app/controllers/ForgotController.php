@@ -20,8 +20,6 @@ class ForgotController
                 $result = $this->model->sendPassword();
                 $_SESSION['forgot-error'] = $result;
             }
-            header('Location: index.php', false);
-            die();
         }
     }
 }

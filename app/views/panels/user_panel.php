@@ -2,7 +2,6 @@
     <div class="user-box">
         <a id="user-foto"><img src="images/user.png" alt="picture"></a><br>
         <div class="username">
-            Stefania
         </div><br>
         <div class="contact">
             stefania@flowerpower.com

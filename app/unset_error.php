@@ -17,3 +17,7 @@ if (isset($_SESSION['crtaccount-error'])) {
 if (isset($_SESSION['answerform-error'])) {
     unset($_SESSION['answerform-error']);
 }
+
+if (isset($_SESSION['add-question-error'])) {
+    unset($_SESSION['add-question-error']);
+}

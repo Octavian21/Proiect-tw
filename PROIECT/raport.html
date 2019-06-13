@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>AdWise! report</title>
+  <link rel="stylesheet" href="documentatie/css/style.css">
+  <script src="documentatie/js/scholarly.min.js"></script>
+</head>
+
+<body prefix="schema: http://schema.org">
+  <header>
+    <div class="banner">
+      <img src="documentatie/scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+      <div class="status">AdWise!</div>
+    </div>
+    <h1>AdWise raport</h1>
+  </header>
+  <div role="contentinfo">
+    <dl>
+      <dt>Author</dt>
+      <dd>
+        Alexa Diana-Andreea
+      </dd>
+    </dl>
+  </div>
+  <section id="introduction" role="doc-introduction">
+    <h2>Descrierea proiectului</h2>
+    <p>
+      “Unii studenti de la anumite facultati intampina dificultati in rezolvarea problemelor intalnite in mediul de
+      lucru adica la facultate.
+    </p>
+    <p>
+      Este necesara o aplicatie unde sa poata pune intrebari si primi raspunsuri.
+    </p>
+    <p>
+      Se vor prezenta toate intrebarile adaugate, impreuna cu raspunsurile si un top al celor mai apreciate
+      raspunsuri pe ora, saptamana sau luna.
+    </p>
+  </section>
+  <section id="structure">
+    <h2>Tehnologiile utilizate</h2>
+    <p>
+      Pentru crearea interfeței utilizatorului, am folosit HTML și CSS.
+    </p>
+    <p>
+      Partea de back-end a interfeței a fost realizata cu ajutorul limbajelor: PHP și JavaScript.
+    </p>
+    <p>
+      Stocarea și managementul datelor au fost realizare utilizând un model de baze de date relațional, MySql.
+    </p>
+  </section>
+  <section id="structure">
+    <h2>Sistemul de stocare al codului</h2>
+    <p>Pentru stocarea online al codului-sursa&#771; s-a folosit GitHub:</p>
+    <a href="https://github.com/Octavian21/Proiect-tw">Repository-ul de pe GitHub</a>
+  </section>
+  <section id="structure">
+    <h2>Funcționalita&#771;țile aplicației</h2>
+    <ul>
+      <li>Aadaugarea de intrebari: orice utilizator, logat sau anonim poate adauga intrebari in baza de date.
+        Intrebarile vor fi adaugate in functie de categoria specificata si de utilizator.
+      </li>
+      <li>Adaugarea de raspunsuri: orice utilizator, logat sau anonim va putea adauga raspunsuri la o anumita intrebare
+      </li>
+      <li> Vizualizarea unui top a raspunsurilor oferite in functie de un anumit timp.
+      </li>
+      <li>Pentru evitarea SQL injection, s-a folosit functia mysqli_real_escape_string care nu permite utilizatorului sa
+        introduca date rau intentionate</li>
+      <li> Modelul MVC permite o manipulare a datelor mai usor, prin caracteristicele sale. Astfel ca toate
+        functionalitatile au fost implementate folosind aceasta metoda. </li>
+      <li>De fiecare data atunci cand utilizatorul introduce date, acestea sunt trimise printr-un Ajax Call pentru a fi
+        prelucrate</li>
+      <li>Resetarea parolei prin trimiterea unui mail, s-a facut cu SMTP4dev.</li>
+    </ul>
+  </section>
+  <section id="semantics">
+    <h2>Diagrame</h2>
+    <section id="Root">
+      <h3>Diagrama bazei de date</h3>
+      <img src="documentatie/diagrame/db.png" height=100% width=100%>
+    </section>
+    <section id="Root">
+      <h3>Diagrame UseCase</h3>
+      <img src="documentatie/diagrame/usecase.png" height=100% width=100%>
+    </section>
+    <section id="Root">
+      <h3> Diagrame MVC </h3>
+      <li>
+        <img src="documentatie/diagrame/controller.png" height=100% width=100%>
+        <img src="documentatie/diagrame/model.png" height=100% width=100%>
+        <img src="documentatie/diagrame/view.png" height=100% width=100%>
+      </li>
+    </section>
+  </section>
+  </section>
+  <section id="Root">
+    <h3>Resurse</h3>
+    <ul>
+      <li><a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html">Cursuri Tehnologii Web</a></li>
+      <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+      <li><a href="https://jigsaw.w3.org/css-validator/">CSS Validator</a></li>
+      <li><a href="https://validator.w3.org/">HTML Validator</a></li>
+    </ul>
+  </section>
+  <br><br><br>
+</body>
+
+</html>

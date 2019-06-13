@@ -4,31 +4,38 @@ include_once("app/models/AnswerModel.php");
 
 class AnswerController
 {
-    public $model;
+    public $model, $idIntrebare;
 
     public function __construct()
     {
         $this->model = new AnswerModel();
+
+        $this->idIntrebare = $this->getIdQuestion();
     }
 
     public function getIdQuestion()
     {
-        $result = $this->model->getIdQuestion();
-        $_SESSION['question'] = $result;
+        $res = $this->model->getIdQuestion();
+        $_SESSION['question'] = $res;
 
-        return $result;
+        return $res;
     }
 
-    public function getAnswers($id_question)
+    public function getNames()
     {
-        return $this->model->getAnswers($id_question);
+        return $this->model->getNames($this->idIntrebare);
     }
-    public function getNames($id_question)
+    public function getInfo()
     {
-        return $this->model->getNames($id_question);
+        return $this->model->getInfo($this->idIntrebare);
     }
-    public function getDates($id_question)
+    public function setDislike()
     {
-        return $this->model->getDates($id_question);
+        return $this->model->setDislike($this->idIntrebare);
+    }
+
+    public function setLike()
+    {
+        return $this->model->setLike($this->idIntrebare);
     }
 }

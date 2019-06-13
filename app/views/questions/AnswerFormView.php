@@ -2,8 +2,6 @@
 include_once("app/controllers/AnswerFormController.php");
 $answerFormController = new AnswerFormController();
 $answerFormController->insertAnswer();
-
-echo $_SESSION['question'];
 ?>
 
 <form onsubmit="onSubmitAnswer(event)" id="answer-form" class="answer-form">

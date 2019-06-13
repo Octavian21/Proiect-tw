@@ -6,19 +6,28 @@ include_once("app/models/QuestionModel.php");
 
 class QuestionAskedController
 {
-    public $model, $questionModel;
+    public $model, $questionModel, $idIntrebare;
 
     public function __construct()
     {
         $this->model = new QuestionAskedModel();
         $this->questionModel = new QuestionModel();
+
+        $this->idIntrebare = $this->model->getIdQuestion();
     }
-    public function getQuestion($id_intrebare)
+    public function getIdQuestion()
     {
-        return $this->model->getQuestion($id_intrebare);
+        $res = $this->model->getIdQuestion();
+        $_SESSION['question'] = $res;
+
+        return $res;
     }
-    public function getNumberAnswers($idIntrebare)
+    public function getQuestion()
     {
-        return $this->questionModel->getNumberAnswers($idIntrebare);
+        return $this->model->getQuestion($this->idIntrebare);
+    }
+    public function getNumberAnswers()
+    {
+        return $this->model->getNumberAnswers($this->idIntrebare);
     }
 }

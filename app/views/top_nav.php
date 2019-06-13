@@ -1,8 +1,8 @@
 <div class="top-nav">
     <div class="left">
-        <a onclick="onClose()" id="logo" href="index.php"><img src="images/logo.png" alt=""></a>
+        <a onclick="onClose(event)" id="logo" href="index.php"><img src="images/logo.png" alt=""></a>
         <div class="mobile-menu">
-            <button onclick="document.getElementById('mobile-dropMenu').style.display='flex'">&#9776;</button>
+            <button onclick="onClickMobile()">&#9776;</button>
         </div>
 
         <div class="dropMenu">
@@ -53,9 +53,9 @@
         <li> <a href="withoutbadge.php"> Without badge </a> </li>
         <li> <a href="popular.php"> Popular </a> </li>
     </ul>
-    <button onclick="document.getElementById('crtaccount').style.display='block'">Create account</button>
+    <button onclick="document.getElementById('crtaccount').style.display='block'; document.getElementById('mobile-dropMenu').style.display='none';">Create account</button>
     <button onclick="document.getElementById('login').style.display='block';
-                                             document.getElementById('menu1').style.display='none'">Log In</button>
+                                             document.getElementById('menu1').style.display='none'; document.getElementById('mobile-dropMenu').style.display='none';">Log In</button>
 </div>
 
 <script>
@@ -81,12 +81,25 @@
         }
     }
 
-    function onClose() {
-        document.getElementById('add-question-error').remove();
-        $.ajax({
-            type: "GET",
-            url: "app/unset_error.php",
-            data: null
-        });
+    function onClickMobile() {
+        let mobileMenu = document.getElementById('mobile-dropMenu');
+
+        if (mobileMenu.style.display == 'none')
+            mobileMenu.style.display = 'block';
+        else
+            mobileMenu.style.display = 'none';
+    }
+
+    function onClose(event) {
+        let error = document.getElementById('add-question-error');
+
+        if (error != null) {
+            error.remove();
+            $.ajax({
+                type: "GET",
+                url: "app/unset_error.php",
+                data: null
+            });
+        }
     }
 </script>

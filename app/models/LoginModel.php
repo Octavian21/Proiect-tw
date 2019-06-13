@@ -21,18 +21,17 @@ class LoginModel
             if (empty($_POST['password']))
                 return 'parola trebuie sa fie completata';
 
-            $result = mysqli_query($this->connection, "select * from utilizatori where user = '" . $_POST['username'] . "' and parola = '" . $_POST['password'] . "'");
+
+            $username = mysqli_real_escape_string($this->connection, $_POST['username']);
+            $password = mysqli_real_escape_string($this->connection, $_POST['password']);
+
+            $result = mysqli_query($this->connection, "select * from utilizatori where user = '" . $username . "' and parola = '" . $password . "'");
 
             if (mysqli_num_rows($result) > 0) {
                 return 'login';
             } else
                 return 'invalid user';
         }
-    }
-
-    public function getNume()
-    {
-        return $_POST['username'];
     }
 
     public function generateAnonim()

@@ -6,11 +6,12 @@ include_once("app/models/AnswerFormModel.php");
 
 class AddQuestionController
 {
-    public $model, $answerFormModel, $questionModel;
+    public $model, $answerFormModel;
 
     public function __construct()
     {
         $this->model = new AddQuestionModel();
+
         $this->answerFormModel = new AnswerFormModel();
     }
 
@@ -20,12 +21,12 @@ class AddQuestionController
             if ($this->model->getSize() != 1)
                 $_SESSION['add-question-error'] = $this->model->getSize();
             else
-                $_SESSION['add-question-error'] = $this->model->addQuestion();
+                $_SESSION['add-question-error'] = $this->model->addQuestion($this->answerFormModel->getIdUser());
         }
     }
 
     public function lastQuestionAdded()
     {
-        return $this->model->lastQuestionAdded($this->answerFormModel->getIdUser());
+        return $this->model->lastQuestionAdded();
     }
 }

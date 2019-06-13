@@ -32,4 +32,25 @@ class QuestionAskedModel
         }
         return $question;
     }
+    public function getNumberAnswers($id_intrebare)
+    {
+        $result = mysqli_query($this->connection, "select count(*) as total from raspunsuri where id_intrebare = " . $id_intrebare);
+
+        $total = mysqli_fetch_assoc($result);
+
+        return $total['total'];
+    }
+    public function getIdQuestion()
+    {
+        if (isset($_GET['question']) && !empty($_GET['question']))
+            if ($this->existIdQuestion($_GET['question']))
+                return $_GET['question'];
+        return 0;
+    }
+    public function existIdQuestion($id_intrebare)
+    {
+        $res = mysqli_query($this->connection, "select * from intrebari where id = " . $id_intrebare);
+
+        return mysqli_num_rows($res);
+    }
 }

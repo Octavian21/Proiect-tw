@@ -47,7 +47,9 @@ class CreateAccountModel
 
     public function getUser()
     {
-        $result = mysqli_query($this->connection, "select * from utilizatori where user = '" . $_POST['username'] . "'");
+        $username = mysqli_real_escape_string($this->connection, $_POST['username']);
+
+        $result = mysqli_query($this->connection, "select * from utilizatori where user = '" . $username . "'");
 
         if (mysqli_num_rows($result) > 0) {
             return 1;
@@ -57,7 +59,15 @@ class CreateAccountModel
 
     public function insertUser()
     {
-        $sql = "INSERT into utilizatori (user,parola,tara,email) values ('" . $_POST['username'] . "','" . $_POST['password'] . "','" . $_POST['tara'] . "','" . $_POST['email'] . "')";
+        $username = mysqli_real_escape_string($this->connection, $_POST['username']);
+
+        $password = mysqli_real_escape_string($this->connection, $_POST['password']);
+
+        $tara = mysqli_real_escape_string($this->connection, $_POST['tara']);
+
+        $email = mysqli_real_escape_string($this->connection, $_POST['email']);
+
+        $sql = "INSERT into utilizatori (user,parola,tara,email) values ('" . $username . "','" . $password . "','" . $tara . "','" . $email . "')";
 
         if ($this->connection->query($sql) === TRUE)
             return 1;

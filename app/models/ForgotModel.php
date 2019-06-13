@@ -19,12 +19,15 @@ class ForgotModel
         if ($_POST['email'] == '')
             return 'Niciun email nu a fost introdus';
 
-        $nume = mysqli_query($this->connection, "select * from utilizatori where user = '" . $_POST['username'] . "'");
+        $username = mysqli_real_escape_string($this->connection, $_POST['username']);
+
+        $nume = mysqli_query($this->connection, "select * from utilizatori where user = '" . $username . "'");
 
         if (mysqli_num_rows($nume) == 0)
             return 'numele nu exista';
 
-        $email = mysqli_query($this->connection, "select * from utilizatori where email = '" . $_POST['email'] . "'");
+        $emai = mysqli_real_escape_string($this->connection, $_POST['email']);
+        $email = mysqli_query($this->connection, "select * from utilizatori where email = '" . $emai . "'");
 
         if (mysqli_num_rows($email) == 0)
             return 'numele nu corespunde cu emailul';
@@ -34,11 +37,14 @@ class ForgotModel
 
     public function sendPassword()
     {
-        $pass = mysqli_query($this->connection, "select parola from utilizatori where user = '" . $_POST['username'] . "'");
+        $username = mysqli_real_escape_string($this->connection, $_POST['username']);
+        $email = mysqli_real_escape_string($this->connection, $_POST['email']);
+
+        $pass = mysqli_query($this->connection, "select parola from utilizatori where user = '" . $username . "'");
 
         $subject = "Your Recovered Password";
 
-        $to = $_POST['email'];
+        $to = $email;
 
         $result = mysqli_fetch_assoc($pass);
 

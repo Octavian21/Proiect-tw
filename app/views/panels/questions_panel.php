@@ -3,5 +3,5 @@
     <div class="container-questions">
         <?php include 'app/views/questions/QuestionView.php' ?>
     </div>
-    <?php include 'app/views/button.php' ?>
+    <?php include 'app/views/ButtonView.php' ?>
 </div>

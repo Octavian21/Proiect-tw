@@ -26,19 +26,6 @@ class AnswerModel
         return mysqli_num_rows($res);
     }
 
-    public function getAnswers($id_intrebare)
-    {
-        $answers = array();
-
-        $res = mysqli_query($this->connection, "select continut from raspunsuri where id_intrebare = " . $id_intrebare);
-
-        while ($data = mysqli_fetch_assoc($res)) {
-            array_push($answers, $data['continut']);
-        }
-
-        return $answers;
-    }
-
     public function getNames($id_intrebare)
     {
         $names = array();
@@ -66,15 +53,16 @@ class AnswerModel
         return $names;
     }
 
-    public function getDates($id_intrebare)
+    public function getInfo($id_intrebare)
     {
         $dates = array();
 
-        $res = mysqli_query($this->connection, "select data_adaugare from raspunsuri where id_intrebare = " . $id_intrebare);
+        $res = mysqli_query($this->connection, "select data_adaugare, nr_dislikeuri, nr_likeuri, continut from raspunsuri where id_intrebare = " . $id_intrebare);
 
         while ($data = mysqli_fetch_assoc($res)) {
             $time = strtotime("now") + 60 * 60 - strtotime($data['data_adaugare']);
-            array_push($dates, $this->transformTime($time));
+            $data['data_adaugare'] = $this->transformTime($time);
+            array_push($dates, $data);
         }
 
         return $dates;
@@ -93,5 +81,33 @@ class AnswerModel
             return round($minutes / (60 * 24)) . " days ago";
 
         return round($minutes / (60 * 24 * 7)) . " weeks ago";
+    }
+
+    public function setDislike($id_question)
+    {
+        if (isset($_POST['nrDislike'])) {
+
+            $sql = mysqli_query($this->connection, "select nr_dislikeuri from raspunsuri where id_intrebare = " . $id_question);
+
+            $nrDislike =  mysqli_fetch_assoc($sql)['nr_dislikeuri'] + 1;
+
+            $sql = "UPDATE raspunsuri SET nr_dislikeuri =" . $nrDislike . " WHERE id_intrebare = " . $id_question;
+
+            $this->connection->query($sql);
+        }
+    }
+
+    public function setLike($id_question)
+    {
+        if (isset($_POST['nrLike'])) {
+
+            $sql = mysqli_query($this->connection, "select nr_likeuri from raspunsuri where id_intrebare = " . $id_question);
+
+            $nrLike =  mysqli_fetch_assoc($sql)['nr_likeuri'] + 1;
+
+            $sql = "UPDATE raspunsuri SET nr_likeuri =" . $nrLike . " WHERE id_intrebare = " . $id_question;
+
+            $this->connection->query($sql);
+        }
     }
 }

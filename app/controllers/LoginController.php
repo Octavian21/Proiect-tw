@@ -25,7 +25,7 @@ class LoginController
             $result = $this->model->getLogin();
             if ($result == 'login') {
                 $_SESSION['login'] = 1;
-                $_SESSION['login-nume'] = $this->model->getNume();
+                $_SESSION['login-nume'] = $_POST['username'];
                 unset($_SESSION['login-error']);
             } else {
                 $_SESSION['login'] = 0;

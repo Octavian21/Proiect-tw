@@ -54,4 +54,34 @@ class QuestionModel
 
         return $total['total'];
     }
+
+    public function getNumberQuestions($questions)
+    {
+        return count($questions);
+    }
+
+    public function getEndButton($start, $nrQuestions)
+    {
+        if ($start  + 10 <= $nrQuestions)
+            return $start + 10;
+        return $nrQuestions;
+    }
+
+    public function getButton()
+    {
+        if (!isset($_GET['button']) || empty($_GET['button']))
+            return 1;
+
+        return $_GET['button'];
+    }
+
+    public function getStartButton()
+    {
+        if (!isset($_GET['button']) || empty($_GET['button']))
+            return 0;
+
+        $button = $_GET['button'];
+
+        return $button * 10;
+    }
 }

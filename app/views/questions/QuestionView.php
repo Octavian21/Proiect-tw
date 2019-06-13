@@ -5,7 +5,11 @@ $questionController = new QuestionController();
 
 $questions = $questionController->getQuestions();
 
-for ($i = 0; $i < count($questions); $i++) {
+$start = $questionController->getStartButton();
+
+$end = $questionController->getEndButton();
+
+for ($i = $start; $i < $end; $i++) {
     ?>
     <div class="question">
         <div class="question-container">

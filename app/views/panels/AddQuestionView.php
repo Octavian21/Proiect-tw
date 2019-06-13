@@ -4,8 +4,6 @@ include_once("app/controllers/AddQuestionController.php");
 $addQuestionController = new AddQuestionController();
 
 $addQuestionController->insertQuestion();
-
-
 ?>
 <div class="right-panel">
     <div class="add-question">
@@ -61,9 +59,11 @@ $addQuestionController->insertQuestion();
 
     function onSubmitQuestion(event) {
 
-        if (<?php echo 1; ?> == 1) {
-            console.log('da');
-        }
+        $.ajax({
+            type: "GET",
+            url: "app/unset_error.php",
+            data: null
+        });
 
         event.preventDefault();
         $.ajax({

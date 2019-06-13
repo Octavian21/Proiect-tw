@@ -3,34 +3,34 @@ include_once("app/controllers/AnswerController.php");
 
 $answerController = new AnswerController();
 
-$question = $answerController->getIdQuestion();
+$names = $answerController->getNames();
 
-$answers = $answerController->getAnswers($question);
+$info = $answerController->getInfo();
 
-$names = $answerController->getNames($question);
+$answerController->setDislike();
 
-$dates = $answerController->getDates($question);
+$answerController->setLike();
 
-for ($i = 0; $i < count($answers); $i++) {
+for ($i = 0; $i < count($info); $i++) {
     ?>
     <div class="question">
         <div class="question-body">
             <div class="question-top">
                 <img src="images/user.png" alt="user">
                 <div class="name"> <a href="pagina_user.php"><b> <?php echo $names[$i] ?> </b></a> has answered: </div>
-                <div class="time"> <a href="#"></a> <?php echo $dates[$i] ?> </div>
+                <div class="time"> <a href="#"></a> <?php echo $info[$i]['data_adaugare'] ?> </div>
             </div>
             <div class="question-content">
-                <p><?php echo $answers[$i] ?></p>
+                <p><?php echo $info[$i]['continut'] ?></p>
             </div>
             <div class="question-bottom">
                 <div class="like first">
-                    <img src="images/like.svg" alt="user">
-                    <div class="text"> 45 </div>
+                    <a href="" onclick="onClickLike(event);"><img src="images/like.svg" alt="user"> </a>
+                    <div class="text"> <?php echo $info[$i]['nr_likeuri'] ?> </div>
                 </div>
                 <div class="dislike">
-                    <img src="images/dislake.svg" alt="user">
-                    <div class="text"> 23 </div>
+                    <a href="answers.php?question=69&answer=1" onclick="onClickDislike(event);"><img src="images/dislake.svg" alt="user"> </a>
+                    <div class="text"> <?php echo $info[$i]['nr_dislikeuri'] ?> </div>
                 </div>
             </div>
         </div>
@@ -38,3 +38,35 @@ for ($i = 0; $i < count($answers); $i++) {
 <?php
 }
 ?>
+
+<script>
+    function onClickDislike(event) {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: 'answers.php?question= <?php echo $_GET['question'];  ?> ',
+            data: {
+                nrDislike: 1,
+                dislike: true
+            },
+            success: function() {
+                window.location.reload();
+            }
+        });
+    }
+
+    function onClickLike(event) {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: 'answers.php?question= <?php echo $_GET['question'];  ?> ',
+            data: {
+                nrLike: 1,
+                like: true
+            },
+            success: function() {
+                window.location.reload();
+            }
+        });
+    }
+</script>

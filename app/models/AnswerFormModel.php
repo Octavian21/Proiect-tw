@@ -34,7 +34,9 @@ class AnswerFormModel
 
     public function insertAnswer()
     {
-        $sql = "INSERT into raspunsuri (id_intrebare,id_utilizator,tip_utilizator,nr_likeuri,nr_dislikeuri,data_adaugare,continut,funda) values (" . $_SESSION['question'] . ",'" . $this->getIdUser() . "','" . $_SESSION['login'] . "','" . 0 . "','" . 0 . "',NOW(),'" . $_POST['message'] . "','" . 0 . "')";
+        $message = mysqli_real_escape_string($this->connection, $_POST['message']);
+
+        $sql = "INSERT into raspunsuri (id_intrebare,id_utilizator,tip_utilizator,nr_likeuri,nr_dislikeuri,data_adaugare,continut,funda) values (" . $_SESSION['question'] . ",'" . $this->getIdUser() . "','" . $_SESSION['login'] . "','" . 0 . "','" . 0 . "',NOW(),'" . $message . "','" . 0 . "')";
 
         if ($this->connection->query($sql) === TRUE)
             return "Raspunsul a fost adaugat cu succes!";

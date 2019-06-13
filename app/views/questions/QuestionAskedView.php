@@ -1,15 +1,13 @@
 <?php
-include_once("app/controllers/AnswerController.php");
 
 include_once("app/controllers/QuestionAskedController.php");
 
-$answerController = new AnswerController();
-
 $questionAskedController = new QuestionAskedController();
 
-$idQuestion = $answerController->getIdQuestion();
+$question = $questionAskedController->getQuestion();
 
-$question = $questionAskedController->getQuestion($idQuestion);
+$nrQuestions = $questionAskedController->getNumberAnswers();
+
 ?>
 <div class="question asked">
     <div class="question-body">
@@ -25,7 +23,7 @@ $question = $questionAskedController->getQuestion($idQuestion);
         <div class="question-bottom">
             <div class="msg">
                 <img src="images/msg.svg" alt="user">
-                <div class="text"> <?php echo ($questionAskedController->getNumberAnswers($idQuestion)); ?> </div>
+                <div class="text"> <?php echo ($nrQuestions); ?> </div>
             </div>
             <div class="like">
                 <img src="images/like.svg" alt="user">
